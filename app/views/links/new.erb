@@ -9,11 +9,11 @@
 	<h2>Link</h2>
 	<div><%= @link[x].link%></div>
 	<h2>Encrypt</h2>
-	<div>http://127.0.0.1:9393/<%= @link[x].encrypt%></div>
+	<div>https://nameless-fjord-95030.herokuapp.com/<%= @link[x].encrypt%></div>
 	<h2>Count</h2>
 	<div><%= @link[x].click_count %></div>
 	<form action="/<%=@link[x].id%>/count" method="post">
-		<input type="submit" value="http://127.0.0.1:9393/<%= @link[x].encrypt%>">
+		<input type="submit" value="https://nameless-fjord-95030.herokuapp.com/<%= @link[x].encrypt%>">
 	</form>
 	<!--<a href="<%= @link[x].link%>">http://127.0.0.1:9393/<%= @link[x].encrypt%></a>-->
 	<p>---------------------------------------</p>
