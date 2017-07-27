@@ -1,0 +1,25 @@
+<h1><%= @errors if @errors %></h1>
+<a href="/links/new">Make new link</a>
+<p></p>
+<a href="/about_us">Home</a>
+<h1>Links</h1>
+
+<% counter = (@link.count)-1 %>
+<% counter.downto(0) do |x|%>
+	<h2>Link</h2>
+	<div><%= @link[x].link%></div>
+	<h2>Encrypt</h2>
+	<div>http://127.0.0.1:9393/<%= @link[x].encrypt%></div>
+	<h2>Count</h2>
+	<div><%= @link[x].click_count %></div>
+	<form action="/<%=@link[x].id%>/count" method="post">
+		<input type="submit" value="http://127.0.0.1:9393/<%= @link[x].encrypt%>">
+	</form>
+	<!--<a href="<%= @link[x].link%>">http://127.0.0.1:9393/<%= @link[x].encrypt%></a>-->
+	<p>---------------------------------------</p>
+<% end %>
+<!--<form action="/posts_create" method="post">
+	<p>Title: <input type="text" name="title"></p>
+	<p>Full text: <input type="text" name="full_text"></p>
+	<input type="submit">
+</form>-->
